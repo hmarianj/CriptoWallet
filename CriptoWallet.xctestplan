@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "86353DC1-F7C5-4A71-BC96-53620B55A480",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CriptoWallet.xcodeproj",
+      "identifier" : "EC34BA672D8861DF00EB6C90",
+      "name" : "CriptoWallet"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CriptoWallet.xcodeproj",
+        "identifier" : "ECAC1B0B2D93077300E4139C",
+        "name" : "CriptoWalletTests"
+      }
+    }
+  ],
+  "version" : 1
+}

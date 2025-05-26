@@ -6,8 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EC34BA7D2D8861F600EB6C90 /* CoreNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = EC34BA7C2D8861F600EB6C90 /* CoreNetworking */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC34BB922D92FE6D00EB6C90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC34BA602D8861DF00EB6C90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC34BA672D8861DF00EB6C90;
+			remoteInfo = CriptoWallet;
+		};
+		ECAC1B102D93077300E4139C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC34BA602D8861DF00EB6C90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC34BA672D8861DF00EB6C90;
+			remoteInfo = CriptoWallet;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		EC34BA682D8861DF00EB6C90 /* CriptoWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CriptoWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC34BB8C2D92FE6D00EB6C90 /* CriptoWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriptoWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECAC1B0C2D93077300E4139C /* CriptoWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CriptoWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFC6EF52D932B51008F47AF /* CriptoWallet.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CriptoWallet.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +40,30 @@
 			path = CriptoWallet;
 			sourceTree = "<group>";
 		};
+		ECAC1B0D2D93077300E4139C /* CriptoWalletTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CriptoWalletTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EC34BA652D8861DF00EB6C90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC34BA7D2D8861F600EB6C90 /* CoreNetworking in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC34BB892D92FE6D00EB6C90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECAC1B092D93077300E4139C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,7 +76,9 @@
 		EC34BA5F2D8861DF00EB6C90 = {
 			isa = PBXGroup;
 			children = (
+				ECFC6EF52D932B51008F47AF /* CriptoWallet.xctestplan */,
 				EC34BA6A2D8861DF00EB6C90 /* CriptoWallet */,
+				ECAC1B0D2D93077300E4139C /* CriptoWalletTests */,
 				EC34BA692D8861DF00EB6C90 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				EC34BA682D8861DF00EB6C90 /* CriptoWallet.app */,
+				EC34BB8C2D92FE6D00EB6C90 /* CriptoWalletUITests.xctest */,
+				ECAC1B0C2D93077300E4139C /* CriptoWalletTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,10 +113,54 @@
 			);
 			name = CriptoWallet;
 			packageProductDependencies = (
+				EC34BA7C2D8861F600EB6C90 /* CoreNetworking */,
 			);
 			productName = CriptoWallet;
 			productReference = EC34BA682D8861DF00EB6C90 /* CriptoWallet.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EC34BB8B2D92FE6D00EB6C90 /* CriptoWalletUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC34BB942D92FE6D00EB6C90 /* Build configuration list for PBXNativeTarget "CriptoWalletUITests" */;
+			buildPhases = (
+				EC34BB882D92FE6D00EB6C90 /* Sources */,
+				EC34BB892D92FE6D00EB6C90 /* Frameworks */,
+				EC34BB8A2D92FE6D00EB6C90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC34BB932D92FE6D00EB6C90 /* PBXTargetDependency */,
+			);
+			name = CriptoWalletUITests;
+			packageProductDependencies = (
+			);
+			productName = CriptoWalletUITests;
+			productReference = EC34BB8C2D92FE6D00EB6C90 /* CriptoWalletUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		ECAC1B0B2D93077300E4139C /* CriptoWalletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECAC1B142D93077300E4139C /* Build configuration list for PBXNativeTarget "CriptoWalletTests" */;
+			buildPhases = (
+				ECAC1B082D93077300E4139C /* Sources */,
+				ECAC1B092D93077300E4139C /* Frameworks */,
+				ECAC1B0A2D93077300E4139C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECAC1B112D93077300E4139C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				ECAC1B0D2D93077300E4139C /* CriptoWalletTests */,
+			);
+			name = CriptoWalletTests;
+			packageProductDependencies = (
+			);
+			productName = CriptoWalletTests;
+			productReference = ECAC1B0C2D93077300E4139C /* CriptoWalletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +175,14 @@
 					EC34BA672D8861DF00EB6C90 = {
 						CreatedOnToolsVersion = 16.0;
 					};
+					EC34BB8B2D92FE6D00EB6C90 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = EC34BA672D8861DF00EB6C90;
+					};
+					ECAC1B0B2D93077300E4139C = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = EC34BA672D8861DF00EB6C90;
+					};
 				};
 			};
 			buildConfigurationList = EC34BA632D8861DF00EB6C90 /* Build configuration list for PBXProject "CriptoWallet" */;
@@ -94,18 +194,37 @@
 			);
 			mainGroup = EC34BA5F2D8861DF00EB6C90;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EC34BA7B2D8861F600EB6C90 /* XCRemoteSwiftPackageReference "CoreNetworking" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EC34BA692D8861DF00EB6C90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EC34BA672D8861DF00EB6C90 /* CriptoWallet */,
+				EC34BB8B2D92FE6D00EB6C90 /* CriptoWalletUITests */,
+				ECAC1B0B2D93077300E4139C /* CriptoWalletTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EC34BA662D8861DF00EB6C90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC34BB8A2D92FE6D00EB6C90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECAC1B0A2D93077300E4139C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +241,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC34BB882D92FE6D00EB6C90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECAC1B082D93077300E4139C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC34BB932D92FE6D00EB6C90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC34BA672D8861DF00EB6C90 /* CriptoWallet */;
+			targetProxy = EC34BB922D92FE6D00EB6C90 /* PBXContainerItemProxy */;
+		};
+		ECAC1B112D93077300E4139C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC34BA672D8861DF00EB6C90 /* CriptoWallet */;
+			targetProxy = ECAC1B102D93077300E4139C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EC34BA762D8861E000EB6C90 /* Debug */ = {
@@ -300,6 +446,72 @@
 			};
 			name = Release;
 		};
+		EC34BB952D92FE6D00EB6C90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = marian.CriptoWallet.CriptoWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CriptoWallet;
+			};
+			name = Debug;
+		};
+		EC34BB962D92FE6D00EB6C90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = marian.CriptoWallet.CriptoWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CriptoWallet;
+			};
+			name = Release;
+		};
+		ECAC1B122D93077300E4139C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = marian.CriptoWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CriptoWallet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CriptoWallet";
+			};
+			name = Debug;
+		};
+		ECAC1B132D93077300E4139C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = marian.CriptoWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CriptoWallet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CriptoWallet";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -321,7 +533,44 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EC34BB942D92FE6D00EB6C90 /* Build configuration list for PBXNativeTarget "CriptoWalletUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC34BB952D92FE6D00EB6C90 /* Debug */,
+				EC34BB962D92FE6D00EB6C90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECAC1B142D93077300E4139C /* Build configuration list for PBXNativeTarget "CriptoWalletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECAC1B122D93077300E4139C /* Debug */,
+				ECAC1B132D93077300E4139C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC34BA7B2D8861F600EB6C90 /* XCRemoteSwiftPackageReference "CoreNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mdb1/CoreNetworking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC34BA7C2D8861F600EB6C90 /* CoreNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC34BA7B2D8861F600EB6C90 /* XCRemoteSwiftPackageReference "CoreNetworking" */;
+			productName = CoreNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC34BA602D8861DF00EB6C90 /* Project object */;
 }

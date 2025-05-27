@@ -22,7 +22,7 @@ struct HomeView: View {
                     }
                 }
             } else if !viewModel.coins.isEmpty {
-                contentView
+                contentView(viewModel.coins)
             } else {
                 Text("Initial State")
             }
@@ -45,20 +45,25 @@ private extension HomeView {
         }
     }
     
-    var contentView: some View {
+    func contentView(_: [Coin]) -> some View {
         NavigationStack {
             ScrollView {
                 SearchBar(searchText: $searchText)
                 LazyVStack {
-                    ForEach(filteredCoins) { coin in
-                        CoinCard(model: .init(coin: coin))
+                    ForEach(filteredCoins, id: \.id) { coin in
+                        NavigationLink(
+                            destination: CoinDetailsView(
+                                coin: coin
+                            )
+                        ) {
+                            CoinCard(model: .init(coin: coin))
+                        }
                     }
                 }
                 .navigationTitle("Cripto Wallet")
             }
             .scrollIndicators(.hidden)
             .background(Color.bgWhite)
-
         }
     }
 }

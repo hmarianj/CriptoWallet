@@ -71,6 +71,7 @@ private extension CoinCard {
     var initialsView: some View {
         Text(model.symbol)
             .font(.system(.title3, weight: .semibold))
+            .foregroundStyle(.black)
     }
     
     var nameView: some View {
@@ -82,6 +83,7 @@ private extension CoinCard {
     var priceView: some View {
         Text(model.price.formatted(.currency(code: "USD")))
             .font(.system(.title3, weight: .semibold))
+            .foregroundStyle(.black)
     }
     
     var changePercentView: some View {

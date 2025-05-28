@@ -17,14 +17,14 @@ struct Coin: Codable, Identifiable, Equatable {
     let totalSupply: Double?
     let maxSupply: Double?
     let quote: Quote?
-    
+
     enum CodingKeys: String, CodingKey {
         case id, symbol, name, quote
         case totalSupply = "total_supply"
         case circulatingSupply = "circulating_supply"
         case maxSupply = "max_supply"
     }
-    
+
     var imageUrl: String {
         "https://s2.coinmarketcap.com/static/img/coins/64x64/\(id).png"
     }
@@ -52,13 +52,12 @@ struct USDQuote: Codable, Equatable {
         case fullyDilutedMarketCap = "fully_diluted_market_cap"
         case price
     }
-    
+
     var volumeToMarketCapRatio: Double? {
-            guard let volume = volume24h, let cap = marketCap, cap != 0 else { return nil }
-            return volume / cap
+        guard let volume = volume24h, let cap = marketCap, cap != 0 else { return nil }
+        return volume / cap
     }
 }
-
 
 extension Coin {
     static var bitcoinMock: Coin {
@@ -66,76 +65,76 @@ extension Coin {
             id: 1,
             name: "Bitcoin",
             symbol: "BTC",
-            circulatingSupply: 16950100.0,
-            totalSupply: 16950100.0,
-            maxSupply: 21000000,
-            quote: Quote.init(
-                usd: USDQuote.init(
+            circulatingSupply: 16_950_100.0,
+            totalSupply: 16_950_100.0,
+            maxSupply: 21_000_000,
+            quote: Quote(
+                usd: USDQuote(
                     percentChange24h: 0.518894,
-                    price: 98102.89,
-                    marketCap: 852164659250.2758,
-                    volume24h: 7155680000,
-                    fullyDilutedMarketCap: 952835089431.14
+                    price: 98_102.89,
+                    marketCap: 852_164_659_250.2758,
+                    volume24h: 7_155_680_000,
+                    fullyDilutedMarketCap: 952_835_089_431.14
                 )
             )
         )
     }
-    
+
     static var ethereumMock: Coin {
         Coin(
             id: 2,
             name: "Bitcoin",
             symbol: "BTC",
-            circulatingSupply: 16950100.0,
-            totalSupply: 16950100.0,
-            maxSupply: 21000000,
-            quote: Quote.init(
-                usd: USDQuote.init(
+            circulatingSupply: 16_950_100.0,
+            totalSupply: 16_950_100.0,
+            maxSupply: 21_000_000,
+            quote: Quote(
+                usd: USDQuote(
                     percentChange24h: 0.518894,
-                    price: 98102.89,
-                    marketCap: 852164659250.2758,
-                    volume24h: 7155680000,
-                    fullyDilutedMarketCap: 952835089431.14
+                    price: 98_102.89,
+                    marketCap: 852_164_659_250.2758,
+                    volume24h: 7_155_680_000,
+                    fullyDilutedMarketCap: 952_835_089_431.14
                 )
             )
         )
     }
-    
+
     static var tetherMock: Coin {
         Coin(
             id: 3,
             name: "Bitcoin",
             symbol: "BTC",
-            circulatingSupply: 16950100.0,
-            totalSupply: 16950100.0,
-            maxSupply: 21000000,
-            quote: Quote.init(
-                usd: USDQuote.init(
+            circulatingSupply: 16_950_100.0,
+            totalSupply: 16_950_100.0,
+            maxSupply: 21_000_000,
+            quote: Quote(
+                usd: USDQuote(
                     percentChange24h: 0.518894,
-                    price: 98102.89,
-                    marketCap: 852164659250.2758,
-                    volume24h: 7155680000,
-                    fullyDilutedMarketCap: 952835089431.14
+                    price: 98_102.89,
+                    marketCap: 852_164_659_250.2758,
+                    volume24h: 7_155_680_000,
+                    fullyDilutedMarketCap: 952_835_089_431.14
                 )
             )
         )
     }
-    
+
     static var bnbMock: Coin {
         Coin(
             id: 4,
             name: "Bitcoin",
             symbol: "BTC",
-            circulatingSupply: 16950100.0,
-            totalSupply: 16950100.0,
-            maxSupply: 21000000,
-            quote: Quote.init(
-                usd: USDQuote.init(
+            circulatingSupply: 16_950_100.0,
+            totalSupply: 16_950_100.0,
+            maxSupply: 21_000_000,
+            quote: Quote(
+                usd: USDQuote(
                     percentChange24h: 0.518894,
-                    price: 98102.89,
-                    marketCap: 852164659250.2758,
-                    volume24h: 7155680000,
-                    fullyDilutedMarketCap: 952835089431.14
+                    price: 98_102.89,
+                    marketCap: 852_164_659_250.2758,
+                    volume24h: 7_155_680_000,
+                    fullyDilutedMarketCap: 952_835_089_431.14
                 )
             )
         )

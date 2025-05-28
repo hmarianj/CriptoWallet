@@ -13,9 +13,9 @@ struct ServiceMocks: CoinServiceProtocol {
         .bitcoinMock,
         .ethereumMock,
         .tetherMock,
-        .bnbMock,
+        .bnbMock
     ]
-    
+
     func getCoins() async throws -> [Coin] {
         if shouldFail {
             throw NSError(domain: "Mock Error", code: 1, userInfo: nil)

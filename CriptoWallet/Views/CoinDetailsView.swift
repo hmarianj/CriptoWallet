@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CoinDetailsView: View {
     let coin: Coin
-    
+    let columns: [GridItem] = [
+        GridItem(.flexible(), spacing: 16),
+        GridItem(.flexible())
+    ]
+
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
@@ -17,27 +21,26 @@ struct CoinDetailsView: View {
                 coinNameView
                 coinPrice
                 marketValueView
-                HStack { //TODO: probar grid
+                LazyVGrid(columns: columns, spacing: 16) {
                     volumeView
                     fdvView
-                }
-                HStack {
                     market24View
                     totalSupplyView
-                }
-                HStack {
                     maxSupplyView
                     circulatingSupplyView
                 }
+                .padding(.bottom)
+                ConverterView(coin: coin)
             }
+            .padding(.bottom)
         }
+        .scrollIndicators(.hidden)
         .padding()
         .background(Color.bgWhite)
     }
 }
 
 private extension CoinDetailsView {
-    
     var coinImageView: some View {
         AsyncImage(url: URL(string: coin.imageUrl)) { image in
             image.resizable()
@@ -46,28 +49,41 @@ private extension CoinDetailsView {
         } placeholder: {
             ProgressView()
                 .frame(width: 60, height: 60)
-                .background(Color.gray.opacity(0.4))
+                .background(.grayLight)
                 .clipShape(.circle)
         }
     }
-    
+
     var coinNameView: some View {
         VStack {
             Text(coin.name)
                 .font(.title)
             Text(coin.symbol)
                 .font(.callout)
-                .foregroundStyle(.black.opacity(0.6))
+                .foregroundStyle(.grayMedium)
         }
     }
-    
+
     var coinPrice: some View {
-        Text(coin.quote?.usd.price?.formatted(.currency(code: "USD")) ?? "0")
-            .font(.system(.title, weight: .semibold))
-            .foregroundStyle(.black)
-            .padding(.vertical)
+        VStack(spacing: 0) {
+            Text(coin.quote?.usd.price?.formatted(.currency(code: "USD")) ?? "0")
+                .font(.system(.title, weight: .semibold))
+                .foregroundStyle(.grayDark)
+            changePercentView
+        }
+        .padding(.vertical)
     }
-    
+
+    var changePercentView: some View {
+        HStack(alignment: .center) {
+            Image(systemName: "arrowtriangle.up.fill")
+                .font(.footnote)
+                .rotationEffect(.degrees(coin.quote?.usd.percentChange24h ?? 0 < 0 ? 180 : 0))
+            Text("\(coin.quote?.usd.percentChange24h ?? 0, specifier: "%.2f")% (1d)")
+        }
+        .foregroundStyle(Double(coin.quote?.usd.percentChange24h ?? 0) < 0 ? .red : .green)
+    }
+
     var marketValueView: some View {
         InfoDetailsBox(
             model: .init(
@@ -76,7 +92,7 @@ private extension CoinDetailsView {
             )
         )
     }
-    
+
     var volumeView: some View {
         InfoDetailsBox(
             model: .init(
@@ -85,7 +101,7 @@ private extension CoinDetailsView {
             )
         )
     }
-    
+
     var fdvView: some View {
         InfoDetailsBox(
             model: .init(
@@ -94,7 +110,7 @@ private extension CoinDetailsView {
             )
         )
     }
-    
+
     var market24View: some View {
         InfoDetailsBox(
             model: .init(
@@ -103,7 +119,7 @@ private extension CoinDetailsView {
             )
         )
     }
-    
+
     var totalSupplyView: some View {
         InfoDetailsBox(
             model: .init(
@@ -112,7 +128,7 @@ private extension CoinDetailsView {
             )
         )
     }
-    
+
     var maxSupplyView: some View {
         InfoDetailsBox(
             model: .init(
@@ -121,7 +137,7 @@ private extension CoinDetailsView {
             )
         )
     }
-    
+
     var circulatingSupplyView: some View {
         InfoDetailsBox(
             model: .init(
@@ -130,11 +146,11 @@ private extension CoinDetailsView {
             )
         )
     }
-    
+
     func formattedVolumeToMarketCapRatio(_ ratio: Double?) -> String {
-        guard let ratio = ratio else { return "N/A" }
+        guard let ratio else { return "N/A" }
         return String(format: "%.2f%%", ratio * 100)
-    
+    }
 }
 
 #Preview {

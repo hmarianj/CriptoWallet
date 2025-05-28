@@ -14,9 +14,9 @@ extension HomeView {
         @Published var coins: [Coin] = []
         @Published var isLoading: Bool = false
         @Published var displayError: Bool = false
-        
+
         private let coinService: CoinServiceProtocol
-        
+
         init(coinService: CoinServiceProtocol = CoinService()) {
             self.coinService = coinService
         }

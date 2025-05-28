@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoinCard: View {
     var model: CoinCard.Model
-    
+
     var body: some View {
         HStack {
             coinImageView
@@ -24,12 +24,12 @@ struct CoinCard: View {
             }
         }
         .padding()
-        .background(Color.white)
-        .cornerRadius(12)
         .overlay {
             RoundedRectangle(cornerRadius: 12)
-                .stroke(.gray.opacity(0.4), lineWidth: 1)
+                .stroke(.grayLight, lineWidth: 1)
         }
+        .background(Color.whiteLight)
+        .cornerRadius(12)
         .padding(.horizontal, 16)
         .padding(.vertical, 4)
     }
@@ -42,7 +42,7 @@ extension CoinCard {
         let name: String
         let price: Double
         let changePercent: Double
-        
+
         init(coin: Coin) {
             imageUrl = coin.imageUrl
             symbol = coin.symbol
@@ -54,7 +54,6 @@ extension CoinCard {
 }
 
 private extension CoinCard {
-    
     var coinImageView: some View {
         AsyncImage(url: URL(string: model.imageUrl)) { image in
             image.resizable()
@@ -63,29 +62,29 @@ private extension CoinCard {
         } placeholder: {
             ProgressView()
                 .frame(width: 40, height: 40)
-                .background(Color.gray.opacity(0.4))
+                .background(.grayLight)
                 .clipShape(.circle)
         }
     }
-    
+
     var initialsView: some View {
         Text(model.symbol)
             .font(.system(.title3, weight: .semibold))
-            .foregroundStyle(.black)
+            .foregroundStyle(.blackDark)
     }
-    
+
     var nameView: some View {
         Text(model.name)
             .font(.headline)
             .foregroundStyle(.gray)
     }
-    
+
     var priceView: some View {
         Text(model.price.formatted(.currency(code: "USD")))
             .font(.system(.title3, weight: .semibold))
-            .foregroundStyle(.black)
+            .foregroundStyle(.blackDark)
     }
-    
+
     var changePercentView: some View {
         HStack(alignment: .center) {
             Image(systemName: "arrow.up")
@@ -101,7 +100,5 @@ private extension CoinCard {
     VStack {
         CoinCard(model: .init(coin: .bitcoinMock))
         CoinCard(model: .init(coin: .ethereumMock))
-        CoinCard(model: .init(coin: .bnbMock))
     }
-    .padding()
 }

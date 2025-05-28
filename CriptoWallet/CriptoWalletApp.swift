@@ -5,8 +5,8 @@
 //  Created by MH on 17/03/2025.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct CriptoWalletApp: App {

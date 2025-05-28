@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var viewModel: ViewModel = ViewModel()
     @State var searchText: String = ""
-    
+
     var body: some View {
         VStack {
             if viewModel.isLoading {
@@ -34,17 +34,17 @@ struct HomeView: View {
 }
 
 private extension HomeView {
-    
     var filteredCoins: [Coin] {
         if searchText.isEmpty {
             return viewModel.coins
         } else {
             return viewModel.coins.filter {
-                $0.name.lowercased().contains(searchText.lowercased()) || $0.symbol.lowercased().contains(searchText.lowercased())
+                $0.name.lowercased().contains(searchText.lowercased()) || $0.symbol.lowercased()
+                    .contains(searchText.lowercased())
             }
         }
     }
-    
+
     func contentView(_: [Coin]) -> some View {
         NavigationStack {
             ScrollView {

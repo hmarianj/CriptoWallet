@@ -9,11 +9,11 @@ import SwiftUI
 
 struct InfoDetailsBox: View {
     var model: InfoDetailsBox.Model
-    
+
     var body: some View {
         VStack(spacing: 8) {
             Text(model.title)
-                .foregroundStyle(.black.opacity(0.6))
+                .foregroundStyle(.grayMedium)
             Text("\(model.value)")
                 .font(.system(.title3, weight: .semibold))
         }
@@ -21,9 +21,9 @@ struct InfoDetailsBox: View {
         .frame(maxWidth: .infinity)
         .overlay {
             RoundedRectangle(cornerRadius: 12)
-                .stroke(.gray.opacity(0.4), lineWidth: 1)
+                .stroke(.grayLight, lineWidth: 1)
         }
-        .background(.white)
+        .background(.whiteLight)
         .cornerRadius(12)
     }
 }
@@ -37,7 +37,7 @@ extension InfoDetailsBox {
 
 #Preview {
     InfoDetailsBox(
-        model: InfoDetailsBox.Model.init(
+        model: InfoDetailsBox.Model(
             title: "Volume",
             value: "34.89"
         )
